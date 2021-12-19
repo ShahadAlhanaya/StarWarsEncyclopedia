@@ -8,39 +8,66 @@
 import UIKit
 
 class PeopleViewController: UITableViewController {
+    
     var people: [String] = Array()
+    var url = URL(string: "https://swapi.dev/api/people/?format=json")
+
+    private var pendingWorkItem: DispatchWorkItem?
+    let queue = DispatchQueue(label: "GetPeopleQueue")
+    
+    var nextPage = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let url = URL(string: "https://swapi.dev/api/people/?format=json")
+            fetch()
+    }
+    
+    func fetch() {
+           pendingWorkItem?.cancel()
+           let newWorkItem = DispatchWorkItem {
+                self.getPeople()
+           }
+           pendingWorkItem = newWorkItem
+           queue.sync(execute: newWorkItem)
+    }
+    
+    func getPeople(){
         let session = URLSession.shared
-        let task = session.dataTask(with: url!, completionHandler: {
+        let task = session.dataTask(with: self.url!, completionHandler: {
             data, response, error in
-            
             do{
                 if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary{
-                    print(jsonResult)
+                    if let nextUrl = jsonResult["next"] as? String{
+                        self.url = URL(string: nextUrl)
+                    }else{
+                        self.nextPage = false
+                    }
                     if let results = jsonResult["results"] as? [[String:Any]] {
                         
                         let resultsArray = results
                         for result in resultsArray {
                             let name = result["name"] as! String
                             self.people.append(String(name))
-                            print(result)
                         }
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
+                        
+                        if self.nextPage{
+                            self.getPeople()
+                        }else{
+                            return
+                        }
                     }
-                    
                 }
             }catch{
                 print(error)
             }
         })
         task.resume()
-        
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return people.count
