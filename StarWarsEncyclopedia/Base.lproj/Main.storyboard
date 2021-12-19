@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cno-2S-iFu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P4O-Kr-hSv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--People View Controller-->
+        <!--People-->
         <scene sceneID="a92-sC-jXx">
             <objects>
                 <tableViewController id="Cno-2S-iFu" customClass="PeopleViewController" customModule="StarWarsEncyclopedia" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,13 +30,97 @@
                             <outlet property="delegate" destination="Cno-2S-iFu" id="dUR-mN-fd1"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="People" id="YRr-5C-p7h"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRy-oV-OCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="68"/>
+            <point key="canvasLocation" x="2651" y="1480"/>
+        </scene>
+        <!--Films-->
+        <scene sceneID="EL6-r0-yFk">
+            <objects>
+                <tableViewController id="dN9-nx-PZh" customClass="FilmsTableViewController" customModule="StarWarsEncyclopedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZcM-7w-vqq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="A8y-W7-f63">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A8y-W7-f63" id="G6M-DB-PGU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dN9-nx-PZh" id="wRs-iX-pc4"/>
+                            <outlet property="delegate" destination="dN9-nx-PZh" id="Ypj-6d-KNo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Films" id="abg-AN-kpQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="09G-th-I40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3454" y="1480"/>
+        </scene>
+        <!--People-->
+        <scene sceneID="Kee-0O-lNM">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cpx-UV-AEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="Ie8-aw-ELx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="People" image="person.3.fill" catalog="system" id="CrC-OB-gJo"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dPM-DF-KiM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Cno-2S-iFu" kind="relationship" relationship="rootViewController" id="09Y-BC-kPD"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2651" y="723"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Syg-3m-4PP">
+            <objects>
+                <tabBarController id="P4O-Kr-hSv" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h4B-BI-qfV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ie8-aw-ELx" kind="relationship" relationship="viewControllers" id="5wK-ko-lw4"/>
+                        <segue destination="ATU-9w-pY0" kind="relationship" relationship="viewControllers" id="kcQ-gD-y7u"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NX0-qZ-JrB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3080" y="-121"/>
+        </scene>
+        <!--Films-->
+        <scene sceneID="CUY-6z-72j">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCb-tw-4fM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="ATU-9w-pY0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Films" image="film.fill" catalog="system" id="0yc-7y-b0e"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TVN-ZQ-lnK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dN9-nx-PZh" kind="relationship" relationship="rootViewController" id="9WL-xh-CNb"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="3454" y="723"/>
         </scene>
     </scenes>
     <resources>
+        <image name="film.fill" catalog="system" width="128" height="93"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

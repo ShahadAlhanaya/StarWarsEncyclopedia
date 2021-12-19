@@ -16,6 +16,7 @@
 		FC24AC48276F27300024AC72 /* StarWarsEncyclopediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24AC47276F27300024AC72 /* StarWarsEncyclopediaTests.swift */; };
 		FC24AC52276F27300024AC72 /* StarWarsEncyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24AC51276F27300024AC72 /* StarWarsEncyclopediaUITests.swift */; };
 		FC24AC54276F27300024AC72 /* StarWarsEncyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24AC53276F27300024AC72 /* StarWarsEncyclopediaUITestsLaunchTests.swift */; };
+		FC24ACA1276FC4130024AC72 /* FilmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24ACA0276FC4130024AC72 /* FilmsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FC24AC4D276F27300024AC72 /* StarWarsEncyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsEncyclopediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC24AC51276F27300024AC72 /* StarWarsEncyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITests.swift; sourceTree = "<group>"; };
 		FC24AC53276F27300024AC72 /* StarWarsEncyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FC24ACA0276FC4130024AC72 /* FilmsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FC24AC39276F272F0024AC72 /* Assets.xcassets */,
 				FC24AC3B276F27300024AC72 /* LaunchScreen.storyboard */,
 				FC24AC3E276F27300024AC72 /* Info.plist */,
+				FC24ACA0276FC4130024AC72 /* FilmsTableViewController.swift */,
 			);
 			path = StarWarsEncyclopedia;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				FC24AC35276F272B0024AC72 /* PeopleViewController.swift in Sources */,
 				FC24AC31276F272B0024AC72 /* AppDelegate.swift in Sources */,
 				FC24AC33276F272B0024AC72 /* SceneDelegate.swift in Sources */,
+				FC24ACA1276FC4130024AC72 /* FilmsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
